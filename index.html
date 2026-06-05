@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Multi-Speaker Voice Conversion Demo</title>
+  <title>Multi-Speaker Sequence-to-Sequence Voice Conversion Using TTS-Augmented Parallel Data</title>
   <style>
     :root {
       --bg: #f6f8fb;
@@ -327,9 +327,9 @@
     <div class="container hero">
       <div>
         <div class="badge">Audio Demo</div>
-        <h1>Multi-Speaker Voice Conversion Demo</h1>
+        <h1>Multi-Speaker Sequence-to-Sequence Voice Conversion Using TTS-Augmented Parallel Data</h1>
         <p class="authors">
-          Placeholder Author A, Placeholder Author B, Placeholder Author C, and Placeholder Author D
+          H. Yamashita, T. Okamoto, R. Takashima, Y. Ohtani, T. Takiguchi, T. Toda, and H. Kawai
         </p>
       </div>
       <aside class="hero-card">
@@ -337,8 +337,6 @@
         <ul>
           <li>Baselines: FreeVC and StarGANv2-VC</li>
           <li>Proposed method: MS WSAS-VC</li>
-          <li>Four conversion conditions with two shared utterances</li>
-          <li>Reusable original source and target audio files</li>
         </ul>
       </aside>
     </div>
@@ -360,50 +358,6 @@
     </p>
 
     <div id="demo-root"></div>
-
-    <section class="section" id="directory">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title">Recommended audio directory structure</h2>
-          <p class="section-desc">Each gender condition uses one representative speaker pair. Cross-gender conditions are not expanded to all M/F combinations. Original speech is separated from converted speech so that the same original files can be referenced from multiple conversion conditions.</p>
-        </div>
-      </div>
-      <pre><code>.
-├── index.html
-└── assets/
-    └── wavs/
-        ├── original/
-        │   ├── M1/
-        │   │   ├── utt_001.wav
-        │   │   └── utt_002.wav
-        │   ├── M2/
-        │   │   ├── utt_001.wav
-        │   │   └── utt_002.wav
-        │   ├── F1/
-        │   │   ├── utt_001.wav
-        │   │   └── utt_002.wav
-        │   └── F2/
-        │       ├── utt_001.wav
-        │       └── utt_002.wav
-        └── converted/
-            ├── male_to_male/
-            │   └── M1_to_M2/
-            │       ├── freevc/
-            │       │   ├── utt_001.wav
-            │       │   └── utt_002.wav
-            │       ├── starganv2_vc/
-            │       │   ├── utt_001.wav
-            │       │   └── utt_002.wav
-            │       └── ms_wsas_vc/
-            │           ├── utt_001.wav
-            │           └── utt_002.wav
-            ├── female_to_female/
-            │   └── F1_to_F2/
-            ├── male_to_female/
-            │   └── M1_to_F1/        # only this pair is used
-            └── female_to_male/
-                └── F1_to_M1/        # only this pair is used</code></pre>
-    </section>
   </main>
 
   <footer>
@@ -424,13 +378,13 @@
     const sharedUtterances = [
       {
         id: "arctic_a0002",
-        text: "Please replace this sentence with the transcript of the first sample.",
+        text: "NOT AT THIS PARTICULAR CASE, TOM, APOLOGIZED WHITTEMORE.",
         file: "arctic_a0002.wav",
       },
       {
-        id: "arctic_a0009",
-        text: "Please replace this sentence with the transcript of the second sample.",
-        file: "arctic_a0009.wav",
+        id: "arctic_a0005",
+        text: "WILL WE EVER FORGET IT.",
+        file: "arctic_a0005.wav",
       },
     ];
 
